@@ -16,7 +16,7 @@ class CardOrderTest {
         form.$("[data-test-id=phone] input").setValue("+79370000000");
         form.$("[data-test-id=agreement]").click();
         form.$(".button").click();
-        $(".Success_successBlock__2L3Cw").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        $(".Success_successBlock__2L3Cw").shouldHave(exactText(" Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее врем."));
     }
 
     @Test
@@ -24,7 +24,7 @@ class CardOrderTest {
         open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Марина Олийнык-Шпак");
-        form.$("[data-test-id=phone] input").setValue("+79370000000");
+        form.$("[data-test-id=phone] input").setValue("+9370000000");
         form.$("[data-test-id=agreement]").click();
         form.$("[type='button']").click();
         $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
@@ -38,7 +38,7 @@ class CardOrderTest {
         form.$("[data-test-id=phone] input").setValue("+79370000000");
         form.$("[data-test-id=agreement]").click();
         form.$("[type='button']").click();
-        $(".input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+        $(".input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефис"));
     }
 
     @Test
@@ -49,7 +49,7 @@ class CardOrderTest {
         form.$("[data-test-id=phone] input").setValue("89370000000");
         form.$("[data-test-id=agreement]").click();
         form.$("[type='button']").click();
-        $(".input_invalid .input__sub").shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+        $(".input_invalid .input__sub").shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012"));
     }
 
     @Test
@@ -58,7 +58,7 @@ class CardOrderTest {
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Марина Олийнык");
         form.$("[data-test-id=phone] input").setValue("89370000000");
-        $("[data-test-id=agreement] .checkbox__text").shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
+        $("[data-test-id=agreement] .checkbox__text").shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных истори"));
         form.$("[type='button']").click();
     }
 
@@ -70,7 +70,7 @@ class CardOrderTest {
         form.$("[data-test-id=phone] input").setValue("");
         form.$("[data-test-id=agreement]").click();
         form.$("[type='button']").click();
-        $(".input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"));
+        $(".input_invalid .input__sub").shouldHave(exactText("оле обязательно для заполнения"));
     }
 }
 
